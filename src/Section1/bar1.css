@@ -1,0 +1,25 @@
+*{
+    z-index: 1;
+}
+
+.bar1{
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.bar1 img{
+    margin: 20px;
+    height: 130px;
+    border-radius: 25%;
+    cursor: pointer;
+}
+.disc{
+    background-color: gray;
+    height: 40px;
+    width: 100%;
+    border-radius: 20%;
+    z-index: -1;
+    transform: translateY(-10px);
+    /* transform: skewY(90deg); */
+}
