@@ -5,7 +5,7 @@ import './Login.css'
 
 export default function login(props){
 
-    function translatelogin(){
+    const translatelogin=()=>{
         var a=document.querySelector('.Login').style
         if(a.transform==="translateY(-2000px)"){
             a.transform="translateY(0px)";
@@ -87,6 +87,9 @@ export default function login(props){
                     </>
                     )}
                     <p><u>or</u></p>
+                    {/* <GoogleButton
+                    onClick={() => { console.log('Google button clicked') }}
+                    /> */}
                     {/* <GoogleLogin></GoogleLogin> */}
                     <div className='Login-btn google-login'>Login with Google</div>
                 </div>
