@@ -1,7 +1,9 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 // import {GoogleLogin,GoogleLogout} from 'react-google-login'
 // import GoogleButton from 'react-google-button'
 import './Login.css'
+import {db} from './fire'
+import {collection,getDocs} from "firebase/firestore";
 
 export default function login(props){
 
@@ -14,6 +16,18 @@ export default function login(props){
             a.transform="translateY(-2000px)";
         }
     }
+
+    const [users,setUsers]=useState([])
+    const usersCollectionref=collection(db,"users");
+    useEffect(()=>{
+
+        const getUser=async()=>{
+            const data=await getDocs(usersCollectionref)
+            console.log(data)
+        }
+        getUser()
+
+    },[])
 
     const {
         email,
