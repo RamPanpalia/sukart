@@ -86,7 +86,11 @@
     cursor: pointer;
 }
 .google-login{
-    background-color: rgb(1, 65, 125);
+    width: fit-content;
+    text-align: center;
+    margin: auto;
+    cursor: pointer;
+    
 }
 .onlyForBITSian{
     padding: 30px;
