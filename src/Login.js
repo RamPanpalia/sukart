@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { GoogleLogin, GoogleLogout } from "react-google-login";
-// import GoogleButton from 'react-google-button'
+import {GoogleButton} from 'react-google-button'
 import "./Login.css";
 import { db } from "./fire";
 import { collection, getDocs } from "firebase/firestore";
@@ -56,7 +56,12 @@ export default function login(props) {
             <div className="close-login-bar close-login-bar2"></div>
           </div>
           <div className="email">
-            <input placeholder="Name" type="text" autoFocus required />
+            <input 
+              placeholder="Name" 
+              type="text" 
+              autoFocus 
+              required 
+            />
             <input
               placeholder="Email Address"
               type="text"
@@ -116,6 +121,7 @@ export default function login(props) {
                   //   onFailure={responseGoogle}
                   cookiePolicy={"single_host_origin"}
                 />
+                <GoogleButton/>
             </div>
           </div>
           <div className="onlyForBITSian">
