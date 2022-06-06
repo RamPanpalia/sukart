@@ -4,6 +4,7 @@ import {GoogleButton} from 'react-google-button'
 import "./Login.css";
 import { db } from "./fire";
 import { collection, getDocs } from "firebase/firestore";
+import { AuthContextProvider,UserAuth } from "./AuthContext";
 
 export default function login(props) {
   const translatelogin = () => {
@@ -15,6 +16,15 @@ export default function login(props) {
     }
   };
 
+  const googleSignIn=UserAuth();
+  const handleGoogleSignIn=async()=>{
+      try{
+          await googleSignIn
+      }
+      catch(error){
+          console.log(error);
+      }
+  };
   const [users, setUsers] = useState([]);
   const usersCollectionref = collection(db, "users");
   useEffect(() => {
@@ -114,14 +124,23 @@ export default function login(props) {
               <u>or</u>,
             </p>
             <div className="google-login">
-                <GoogleLogin
+                {/* <GoogleLogin
                   clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
                   buttonText="Login with Google"
                   //   onSuccess={responseGoogle}
                   //   onFailure={responseGoogle}
                   cookiePolicy={"single_host_origin"}
+                /> */}
+                {/* <GoogleLogout
+                  clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+                  buttonText="Logout"
+                  //   onSuccess={responseGoogle}
+                  //   onFailure={responseGoogle}
+                  cookiePolicy={"single_host_origin"}
+                /> */}
+                <GoogleButton
+                onClick={handleGoogleSignIn}
                 />
-                <GoogleButton/>
             </div>
           </div>
           <div className="onlyForBITSian">
