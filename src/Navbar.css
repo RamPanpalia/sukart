@@ -86,6 +86,7 @@
         height: auto;
         flex-direction: column;
         overflow-y: hidden;
+        margin: auto;
     }
     .Navbar div{
         margin: 20px auto;
