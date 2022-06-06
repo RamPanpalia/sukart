@@ -1,6 +1,6 @@
 .Carousal{
     display: flex;
-    overflow-X: scroll;
+    overflow-x: scroll;
 }
 .Carousal img{
     width: 100%;
@@ -9,11 +9,14 @@
     display: flex;
     position: absolute;
     z-index: 2;
-    width: 100%;
+    width: 98%;
+    margin: 20px;
+    height: 55%;
 }
 .Navigator div{
     background-color: white;
     border-radius: 5px;
+    padding: 5px;
     margin-top: auto;
     margin-bottom: auto;
 }
