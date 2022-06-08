@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from './Navbar';
+// import SignUp from './SignUp';
 import Carousal from './Carousal'
 import Section1 from './section1';
 import Section2 from './section2';
@@ -9,8 +10,10 @@ import Section4 from './section4';
  
 export default function App() {
   return (
+    <>
     <div className="App">
       <Navbar/>
+      {/* <SignUp/> */}
       <Carousal/>
       <Section1/>
       <Section2/>
@@ -18,6 +21,7 @@ export default function App() {
       <Section4/>
       Work.In.Progress
     </div>
+    </>
   );
 }
 

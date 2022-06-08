@@ -8,8 +8,7 @@
 }
 .Navbar{
     display: flex;
-    padding: 1em 1.5em;
-    padding-left: 2em;
+    padding: 1em 2em;
     color: white;
     background-color: rgb(41, 39, 39);
     align-items: center;
@@ -18,9 +17,10 @@
 }
 .nav-ele{
     margin: 0 10px;
-    flex: 1;
+    /* flex: 1; */
 }
 .username{
+    margin-left: auto;
     border-left: 5px solid white;
     padding-left: 10px;
 }
@@ -54,7 +54,7 @@
     display: flex;
 }
 .Navbar .search{
-    flex: 2;
+    /* flex: 2; */
     margin: 0 10px;
 }
 .logo{

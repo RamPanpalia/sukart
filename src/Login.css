@@ -36,6 +36,22 @@
     background-color: white;
     padding-top: 50px;
 }
+.successMsg{
+    font-size: 18px;
+    padding: 10px;
+    margin: 20px 20px 0 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 144, 0, 0.437);
+    color: green;
+}
+.errorMsg{
+    font-size: 18px;
+    padding: 10px;
+    margin: 20px 20px 0 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 35, 35, 0.405);
+    color: red;
+}
 .closeLogin{
     padding: 10px;
     right: 0;
@@ -56,12 +72,15 @@
 .close-login-bar2{
     transform: rotate(45deg) translate(8px,6px);
 }
-.part2 input{
+.part2 input,textarea{
     background-color: rgb(235, 235, 235);
     margin: 15px 20px;
     height: 30px;
     border: none;
     padding: 4px 4px 4px 10px;
+}
+.part2 textarea{
+    height: 60px;
 }
 .hasAccQuery{
     margin-top: 5px ;

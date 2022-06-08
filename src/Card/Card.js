@@ -32,20 +32,6 @@ export default function Card(props){
         }
     }
 
-    // var a=false;
-    // function addToFav(){
-    //     var ATFStyle=document.querySelector('.ATF').style;
-    //     if(a===true){
-    //         ATFStyle.color="gray";
-    //         ATFStyle.transform="scale(1)";
-    //         a=false;
-    //     }
-    //     else{
-    //         ATFStyle.transform="scale(1.125)";
-    //         ATFStyle.color="red";
-    //         a=true;
-    //     }
-    // }
     return (
         <>
         <div className="Card">

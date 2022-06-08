@@ -1,0 +1,9 @@
+.SignUp{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: auto;
+}
+.create-acc-ele{
+    margin: 20px;
+}
