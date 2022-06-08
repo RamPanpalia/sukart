@@ -40,10 +40,15 @@
     cursor: pointer;
     text-align: center;
 }
-.Cart,
+/* .Cart,
 .Favourites,
 .Log-out{
     display: none;
+} */
+.Cart{
+    border: 1px solid white;
+    border-radius: 25%;
+    padding: 10px;
 }
 .Cart svg{
     height: 35px;
