@@ -31,11 +31,16 @@ export default function Navbar() {
     return user
   }
 
+  const [userName,setUserName]=useState("user");
   const loggeduser = GetCurrentUser();
-  console.log(loggeduser[0]);
+  var abc="";
+  if(loggeduser){
+      console.log(loggeduser[0].username);
+    //   abc=loggeduser[0].username;
+  }
+//   setUserName(abc);
   const [profileimg, setProfileImg] = useState(null);
 
-  var userrr = "user";
   const translatelogin = () => {
     const a = document.querySelector(".Login").style;
     if (a.transform === "translateY(-2000px)") {
@@ -73,7 +78,7 @@ export default function Navbar() {
         </div> */}
         <div className="username nav-ele">
           <img src={profileimg ? profileimg : profileLogo} alt="" />
-          <span>Hi user,</span>
+          <span>Hi {loggeduser?loggeduser[0].username:"user"},</span>
         </div>
         <div className="Cart nav-ele">
           <svg
