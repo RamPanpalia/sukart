@@ -4,7 +4,13 @@ import './Card.css'
 
 export default function Card(props){
     const [count, setCount] = React.useState(1)
-    const [favBool, setBool] = React.useState(false)
+    const [isFav, setBool] = React.useState(false)
+
+    //we will send all the data onClick to firebase and later populate it on the buy history or add to cart page
+    //we will also add and remove products from favourites
+    function buyIt(){}
+    function addToCart(){}
+    function toggleFav(){}
     
     function add() {
         setCount(function(oldValue) {
@@ -24,8 +30,9 @@ export default function Card(props){
     }
 
     function toggle(){
-        if(favBool===true){
+        if(isFav===true){
             setBool(t=>false);
+            toggleFav();
         }
         else{
             setBool(t=>true);
@@ -43,13 +50,13 @@ export default function Card(props){
                 <div className={"count"+props.cardid}>{count}</div>
                 <div className="add" onClick={add}>+</div>
             </div>
-            <div className="BN buy-opt">Buy Now</div>
-            <div className="ATC buy-opt">Add to Cart</div>
+            <div className="BN buy-opt" onClick={buyIt}>Buy Now</div>
+            <div className="ATC buy-opt" onclick={addToCart}>Add to Cart</div>
             <div className='Name'>
 
             <div className="name">{props.name}</div>
             <div className="ATF" onClick={toggle}>
-                {favBool?(<><span className='red'>♥</span></>):(<>♥</>)}
+                {isFav?(<><span className='red'>♥</span></>):(<>♥</>)}
             </div>
             </div>
             <div className="SD">This product is very useful, you must definitely but it.</div>
