@@ -1,15 +1,44 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import './Card.css'
 // import logo from './img.jpg'
+import {auth,db} from '../FirebaseConfigs/firebaseConfig'
+import { collection, addDoc, arrayRemove, getDocs, query, where  } from "firebase/firestore";
 
 export default function Card(props){
     const [count, setCount] = React.useState(1)
     const [isFav, setBool] = React.useState(false)
 
+    function GetCurrentUser() {
+        const [user, setUser] = useState("");
+        const usersCollectionRef = collection(db, "users");
+        useEffect(() => {
+          auth.onAuthStateChanged(userlogged => {
+            if (userlogged) {
+              const getUsers = async () => {
+                const q = query(
+                  collection(db, "user"),
+                  where("uid", "==", userlogged.uid)
+                );
+                console.log(q);
+                const data = await getDocs(q);
+                setUser(data.docs.map((doc) => ({...doc.data(), id:doc.id })));
+              };
+              getUsers();
+            } else {
+              setUser(null);
+            }
+          });
+        }, []);
+        return user
+      }
+      const loggeduser = GetCurrentUser();
+
     //we will send all the data onClick to firebase and later populate it on the buy history or add to cart page
     //we will also add and remove products from favourites
     function buyIt(){}
-    function addToCart(){}
+    const addToCart=()=>{
+        if(loggeduser){}
+    }
     function toggleFav(){}
     
     function add() {
