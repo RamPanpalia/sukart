@@ -54,6 +54,20 @@ export default function Navbar() {
       })
   }
 
+  const displayProfile=()=>{
+    if(loggeduser){
+      if(document.querySelector('.Profile').style.display==="block"){
+        document.querySelector('.Profile').style.display="none";
+      }
+      else{
+        document.querySelector('.Profile').style.display="block";
+      }
+    }
+    else{
+      (alert("Please Login to view profile details"))
+    }
+  }
+
   return (
     <>
       <Login />
@@ -69,7 +83,7 @@ export default function Navbar() {
             <input className='searchin' placeholder=' 🔍 | Search'/>
         </div> */}
         <div className="username nav-ele">
-          <img src={profileimg ? profileimg : profileLogo} alt="" />
+          <img src={profileimg ? profileimg : profileLogo} onClick={displayProfile} alt="" />
           <span>Hi {loggeduser?loggeduser[0].username:"user"},</span>
         </div>
         {loggeduser?
@@ -104,6 +118,36 @@ export default function Navbar() {
           <span className="material-symbols-outlined">expand_more</span>
         </div>
       </div>
+      <div className="Profile">
+        {loggeduser?
+        <>
+        <div className="Prof-title">Profile</div>
+        <div className="profile-inside">
+        <div className="profile-ele">
+          <div className="profile-ele-tittle">Name: </div>
+          <div className="profile-ele-value"> {loggeduser[0].username}</div>
+        </div>
+        <div className="profile-ele">
+          <div className="profile-ele-tittle">Email: </div>
+          <div className="profile-ele-value"> {loggeduser[0].email}</div>
+        </div>
+        <div className="profile-ele">
+          <div className="profile-ele-tittle">Phone Number: </div>
+          <div className="profile-ele-value"> {loggeduser[0].phonenumber}</div>
+        </div>
+        <div className="profile-ele">
+          <div className="profile-ele-tittle">Address: </div>
+          <div className="profile-ele-value"> {loggeduser[0].address}</div>
+        </div>
+        <div className="profile-ele">
+          <div className="profile-ele-tittle"></div>
+          <div className="profile-ele-value"></div>
+        </div>
+        </div>
+        </>
+        :<></>}
+      </div>
     </>
-  );
-}
+    );
+  }
+  

@@ -4,9 +4,35 @@ import "./Login.css";
 // import {useNavigate} from 'react-router-dom'
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import {auth,db} from './FirebaseConfigs/firebaseConfig'
-import { collection, addDoc, arrayRemove } from "firebase/firestore";
+import { collection, getDocs, addDoc, arrayRemove,where,query } from "firebase/firestore";
 
 export default function login(props) {
+
+  function GetCurrentUser() {
+    const [user, setUser] = useState("");
+    const usersCollectionRef = collection(db, "users");
+    useEffect(() => {
+      auth.onAuthStateChanged(userlogged => {
+        if (userlogged) {
+          const getUsers = async () => {
+            const q = query(
+              collection(db, "user"),
+              where("uid", "==", userlogged.uid)
+            );
+            console.log(q);
+            const data = await getDocs(q);
+            setUser(data.docs.map((doc) => ({...doc.data(), id:doc.id })));
+          };
+          getUsers();
+        } else {
+          setUser(null);
+        }
+      });
+    }, []);
+    return user
+  }
+
+  const loggeduser = GetCurrentUser();
 
   const [username,setUsername]=useState("");
   const [password,setPassword]=useState("");
@@ -86,10 +112,14 @@ export default function login(props) {
       })
       
     }
-    
+
+    if(loggeduser){
+      document.querySelector(".Login").style.transform = "translateY(-2000px)";
+    }
     const translatelogin = () => {
       var a = document.querySelector(".Login").style;
-      if (a.transform === "translateY(-2000px)") {
+      // (loggeduser)?a.transform = "translateY(-2000px)":a.transform = "translateY(0px)";
+      if (a.transform === "translateY(-2000px)" && !loggeduser) {
         a.transform = "translateY(0px)";
       } else {
       a.transform = "translateY(-2000px)";
@@ -131,6 +161,7 @@ export default function login(props) {
           <div className="email">
             <input
               placeholder="Email Address"
+              onChange={(e)=>setEmail(e.target.value)}
               type="email"
               autoFocus
               required
@@ -139,6 +170,7 @@ export default function login(props) {
           <div className="password">
             <input
               placeholder="Password"
+              onChange={(e)=>setPassword(e.target.value)}
               type="password"
               required
             />
