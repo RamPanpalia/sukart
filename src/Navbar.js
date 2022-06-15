@@ -56,7 +56,7 @@ export default function Navbar() {
 
   const displayProfile=()=>{
     if(loggeduser){
-      if(document.querySelector('.Profile').style.display==="block"){
+      if(document.querySelector('.Profile').style.display!=="none"){
         document.querySelector('.Profile').style.display="none";
       }
       else{

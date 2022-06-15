@@ -19,7 +19,6 @@ export default function login(props) {
               collection(db, "user"),
               where("uid", "==", userlogged.uid)
             );
-            console.log(q);
             const data = await getDocs(q);
             setUser(data.docs.map((doc) => ({...doc.data(), id:doc.id })));
           };
