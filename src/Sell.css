@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.seller-details-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+input{
+    margin: 10px auto;
+    padding: 5px;
+}
