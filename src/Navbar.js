@@ -140,8 +140,12 @@ export default function Navbar() {
           <div className="profile-ele-value"> {loggeduser[0].address}</div>
         </div>
         <div className="profile-ele">
-          <div className="profile-ele-tittle"></div>
-          <div className="profile-ele-value"></div>
+          <div className="Log-out nav-ele prof-ele-btn" onClick={handleLogout}>
+            Log-out
+          </div>
+          <div className="history nav-ele prof-ele-btn">
+            History
+          </div>
         </div>
         </div>
         </>

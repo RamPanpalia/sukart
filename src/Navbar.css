@@ -35,7 +35,8 @@
 /* .Cart, */
 .Favourites,
 .Log-in,
-.Log-out{
+.Log-out,
+.history{
     border: 2px solid white;
     padding: 8px 5px;
     cursor: pointer;
@@ -91,6 +92,7 @@
     background-color: rgb(32, 32, 32);
     padding: 2em;
     color: yellow;
+    /* transition: 5s; */
 }
 .Prof-title{
     font-size: 30px;
@@ -106,6 +108,12 @@
 .profile-ele{
     display: flex;
     padding: 10px;
+}
+.prof-ele-btn{
+    cursor: pointer;
+    color: white;
+    padding: 10px;
+    font-weight: 600;
 }
 
 @media only screen and (max-width: 600px){

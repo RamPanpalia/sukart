@@ -88,7 +88,7 @@ export default function Card(props){
                 {isFav?(<><span className='red'>♥</span></>):(<>♥</>)}
             </div>
             </div>
-            <div className="SD">This product is very useful, you must definitely but it.</div>
+            <div className="SD">This product is very useful, you must definitely buy it.</div>
         </div>
         </>
     )

@@ -10,7 +10,7 @@ import img7 from './assets/Carousal/Cimg7.jpg'
 
 const Carousal = () => {
 
-    const ref=useRef(null);
+    // const ref=useRef(null);
     const scrollIt=(x,y,ele)=>{
         // ref.current.scrollLeft+=x;
         // document.querySelector(ele).scrollRight+=y;
@@ -19,7 +19,7 @@ const Carousal = () => {
     }
 
     const scroll_It=(scrollOffSet)=>{
-        ref.current.scrollRight += scrollOffSet;
+        // ref.current.scrollRight += scrollOffSet;
         // document.querySelector(ele).scrollLeft+=x;
         // document.querySelector(ele).scrollRight+=y;
     }
