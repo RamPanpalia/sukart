@@ -82,7 +82,7 @@ export default function Navbar() {
         {/* <div className='search nav-ele'>
             <input className='searchin' placeholder=' 🔍 | Search'/>
         </div> */}
-        <div className="username nav-ele">
+        <div className="username nav-ele" tittle="View Profile">
           <img src={profileimg ? profileimg : profileLogo} onClick={displayProfile} alt="" />
           <span>Hi {loggeduser?loggeduser[0].username:"user"},</span>
         </div>
