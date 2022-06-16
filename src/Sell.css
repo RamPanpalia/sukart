@@ -3,12 +3,30 @@
     padding: 0;
     text-align: center;
 }
+.sellBlock{
+    border: 2px solid black;
+    margin: 20px;
+    padding: 20px;
+}
 .seller-details-form{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 10px auto;
 }
 input{
     margin: 10px auto;
     padding: 5px;
+}
+textarea{
+    height: 100px;
+}
+.Upload{
+    font-size: 25px;
+    padding: 5px 8px;
+    margin: 15px;
+    background-color: rgb(18, 18, 49);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
 }

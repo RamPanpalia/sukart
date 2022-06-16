@@ -39,8 +39,8 @@ const Sell = () => {
 
   const loggeduser = GetCurrentUser();
   return (
-    <>
-    <div>Sell</div>
+    <div className='sellBlock'>
+    {/* <div>Sell</div> */}
     <h1>Sell Products on The all new SuKart</h1>
     <form className='seller-details-form'>
 
@@ -80,13 +80,14 @@ const Sell = () => {
       placeholder="Product Warranty Details"
       />
       <input
-      type="text"
+      type="file"
       onChange={e=>(setProductImage(e.target.value))}
-      placeholder="Product Image URL"
+      placeholder="Please choose a file"
       />
 
     </form>
-    </>
+    <button className='Upload'>Upload</button>
+    </div>
   )
 }
 
