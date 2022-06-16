@@ -11,6 +11,7 @@ const Sell = () => {
   const [brand,setBrand]=useState("");
   const [customersupport,setCustomersupport]=useState("");
   const [price,setPrice]=useState("");
+  const [quantity,setQuantity]=useState("");
   const [warranty,setWarranty]=useState("");
   const [productimage,setProductImage]=useState("");
 
@@ -36,13 +37,35 @@ const Sell = () => {
     }, []);
     return user
   }
-
+  
   const loggeduser = GetCurrentUser();
+
+  const types=['image/jpg','image/jpeg','image/png','image/PNG']
+  const handleProductImg=(e)=>{
+    e.preventDefault();
+    let selectedFile=e.target.files[0];
+    if(selectedFile){
+      if(types.includes(selectedFile.type)){
+        setProductImage(selectedFile);
+      }
+      else{
+        setProductImage(null);
+        alert("Please select a image file only");
+      }
+    }
+    else{
+      alert("Please select a file");
+    }
+
+  }
+
+  const handleAddProduct=()=>{}
+
   return (
     <div className='sellBlock'>
     {/* <div>Sell</div> */}
     <h1>Sell Products on The all new SuKart</h1>
-    <form className='seller-details-form'>
+    <form className='seller-details-form' onSubmit={handleAddProduct}>
 
       <input
       type="text"
@@ -75,18 +98,23 @@ const Sell = () => {
       placeholder="Product Price"
       />
       <input
+      type="number"
+      onChange={e=>(setQuantity(e.target.value))}
+      placeholder="Quantity"
+      />
+      <input
       type="text"
       onChange={e=>(setWarranty(e.target.value))}
       placeholder="Product Warranty Details"
       />
       <input
       type="file"
-      onChange={e=>(setProductImage(e.target.value))}
+      onChange={handleProductImg}
       placeholder="Please choose a file"
       />
 
     </form>
-    <button className='Upload'>Upload</button>
+    <button className='Upload'>Add Product</button>
     </div>
   )
 }
