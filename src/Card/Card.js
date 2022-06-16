@@ -5,8 +5,8 @@ import {auth,db} from '../FirebaseConfigs/firebaseConfig'
 import { collection, addDoc, arrayRemove, getDocs, query, where  } from "firebase/firestore";
 
 export default function Card(props){
-    const [count, setCount] = React.useState(1)
-    const [isFav, setBool] = React.useState(false)
+    const [count, setCount] = useState(1)
+    const [isFav, setBool] = useState(false)
 
     function GetCurrentUser() {
         const [user, setUser] = useState("");
