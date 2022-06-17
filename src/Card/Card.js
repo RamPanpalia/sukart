@@ -19,7 +19,6 @@ export default function Card(props){
                   collection(db, "user"),
                   where("uid", "==", userlogged.uid)
                 );
-                console.log(q);
                 const data = await getDocs(q);
                 setUser(data.docs.map((doc) => ({...doc.data(), id:doc.id })));
               };
