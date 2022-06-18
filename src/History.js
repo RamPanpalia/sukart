@@ -38,7 +38,7 @@ const History = () => {
     useEffect(() => {
         const getProducts = () => {
             const productsArray = [];
-            const path = "history-QsyrZzzAt2MVnc48nvVbHjhJ7x22";
+            const path = `history-QsyrZzzAt2MVnc48nvVbHjhJ7x22`;
             /*.collection("cart-QsyrZzzAt2MVnc48nvVbHjhJ7x22")*/
             // alert(path);
             getDocs(collection(db, path)).then((querySnapshot) => {

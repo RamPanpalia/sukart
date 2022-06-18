@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Login from "./Login";
 import "./Navbar.css";
+import "./CartHistory.css";
 import logo from "./sutt.png";
+import Cart from './Cart'
+import History from './History'
 import profileLogo from "./assets/user-profile.svg";
 import { auth, db } from "./FirebaseConfigs/firebaseConfig";
 import { collection, getDocs, query, where } from "firebase/firestore";
@@ -42,9 +45,6 @@ export default function Navbar() {
   }
 
   const loggeduser = GetCurrentUser();
-  if(loggeduser){
-      console.log(loggeduser[0].username);
-  }
 
   const [profileimg, setProfileImg] = useState(null);
 
@@ -68,6 +68,27 @@ export default function Navbar() {
     }
   }
 
+  const toggleHistory=()=>{
+    if(loggeduser){
+      if(document.querySelector('.historyy').style.display!=="none"){
+        document.querySelector('.historyy').style.display="none"
+      }
+      else{
+        document.querySelector('.historyy').style.display="block"
+      }
+    }
+  }
+  const toggleCart=()=>{
+    if(loggeduser){
+      if(document.querySelector('.cartt').style.display!=="none"){
+        document.querySelector('.cartt').style.display="none"
+      }
+      else{
+        document.querySelector('.cartt').style.display="block"
+      }
+    }
+  }
+
   return (
     <>
       <Login />
@@ -79,16 +100,14 @@ export default function Navbar() {
           </div>
           <div className="head">SuKart</div>
         </div>
-        {/* <div className='search nav-ele'>
-            <input className='searchin' placeholder=' 🔍 | Search'/>
-        </div> */}
+
         <div className="username nav-ele" tittle="View Profile">
           <img src={profileimg ? profileimg : profileLogo} onClick={displayProfile} alt="" />
           <span>Hi {loggeduser?loggeduser[0].username:"user"},</span>
         </div>
         {loggeduser?
         <>
-        <div className="Cart nav-ele">
+        <div className="Cart nav-ele" onClick={toggleCart}>
           <svg
             id="Layer_1"
             fill="#fff"
@@ -147,13 +166,21 @@ export default function Navbar() {
           <div className="Log-out nav-ele prof-ele-btn" onClick={handleLogout}>
             Log-out
           </div>
-          <div className="history nav-ele prof-ele-btn">
+          <div className="history nav-ele prof-ele-btn" onClick={toggleHistory}>
             History
           </div>
         </div>
         </div>
         </>
         :<></>}
+      </div>
+      <div className="CartHistory">
+        <div className='cartt'>
+          <Cart/>
+        </div>
+        <div className='historyy'>
+          <History/>
+        </div>
       </div>
     </>
     );
