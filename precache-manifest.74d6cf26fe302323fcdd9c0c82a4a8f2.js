@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "52cab7d4a452e6f40a75",
+    "revision": "a9af247429bb4183e310",
     "url": "/sukart/static/css/main.dd13c9b5.chunk.css"
   },
   {
-    "revision": "52cab7d4a452e6f40a75",
-    "url": "/sukart/static/js/main.2e8ae46b.chunk.js"
+    "revision": "a9af247429bb4183e310",
+    "url": "/sukart/static/js/main.aa37c769.chunk.js"
   },
   {
     "revision": "dc3c34b90a31ad3d336d",
@@ -60,7 +60,7 @@ self.__precacheManifest = [
     "url": "/sukart/static/media/Cimg1.98e91681.webp"
   },
   {
-    "revision": "83d5208204f9d2d4e30d380f1dceec38",
+    "revision": "de5ac42b76d108498a804ea04d4227b0",
     "url": "/sukart/index.html"
   }
 ];
