@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "a47c987ae394750dfb1f",
-    "url": "/sukart/static/css/main.ac9d1731.chunk.css"
+    "revision": "9d1134b66a3df134adb1",
+    "url": "/sukart/static/css/main.67ed5a02.chunk.css"
   },
   {
-    "revision": "a47c987ae394750dfb1f",
-    "url": "/sukart/static/js/main.2e09ad56.chunk.js"
+    "revision": "9d1134b66a3df134adb1",
+    "url": "/sukart/static/js/main.9b795089.chunk.js"
   },
   {
-    "revision": "ecdbcefc469813e4119c",
-    "url": "/sukart/static/js/runtime~main.599d8b84.js"
+    "revision": "9dd7af4e7dcdefc4a30e",
+    "url": "/sukart/static/js/runtime~main.c0015049.js"
   },
   {
-    "revision": "e25d67224cd04a04ab0b",
-    "url": "/sukart/static/js/2.95359836.chunk.js"
+    "revision": "a2c741479dded1f3e58a",
+    "url": "/sukart/static/js/2.24c6ef76.chunk.js"
   },
   {
-    "revision": "af8870e8e5ad21c0bb44",
-    "url": "/sukart/static/js/3.789e687e.chunk.js"
+    "revision": "3eb3f95558cd90c6a033",
+    "url": "/sukart/static/js/3.f03f87d3.chunk.js"
   },
   {
     "revision": "ea80f759b872d917610d03eb6039236f",
@@ -56,7 +56,7 @@ self.__precacheManifest = [
     "url": "/sukart/static/media/Cimg7.c4f56d5c.jpg"
   },
   {
-    "revision": "544808b6dbb72607363dc515cf75bc9f",
+    "revision": "2abcf2b73a37a56dde36336de6112da2",
     "url": "/sukart/index.html"
   }
 ];
