@@ -1,23 +1,31 @@
 self.__precacheManifest = [
   {
-    "revision": "f69b6d20ca45a51890ac",
-    "url": "/sukart/static/css/main.3ff2c266.chunk.css"
+    "revision": "74c9a15e19f6d70acc5f",
+    "url": "/sukart/static/css/main.00ecc23c.chunk.css"
   },
   {
-    "revision": "f69b6d20ca45a51890ac",
-    "url": "/sukart/static/js/main.7b172fa0.chunk.js"
+    "revision": "74c9a15e19f6d70acc5f",
+    "url": "/sukart/static/js/main.23f86272.chunk.js"
   },
   {
-    "revision": "419dcf587cf725903999",
-    "url": "/sukart/static/js/runtime~main.25d62625.js"
+    "revision": "dc3c34b90a31ad3d336d",
+    "url": "/sukart/static/js/runtime~main.11497fdd.js"
   },
   {
-    "revision": "07defabe7020803d9822",
-    "url": "/sukart/static/js/2.16817516.chunk.js"
+    "revision": "b55b53a401dd69ec92fe",
+    "url": "/sukart/static/css/2.832f8985.chunk.css"
   },
   {
-    "revision": "7da80a4b2c1fc8dd018d",
-    "url": "/sukart/static/js/3.e3b4af8e.chunk.js"
+    "revision": "b55b53a401dd69ec92fe",
+    "url": "/sukart/static/js/2.cc051903.chunk.js"
+  },
+  {
+    "revision": "654064ea4865b5a91ce8",
+    "url": "/sukart/static/js/3.7bc68c7e.chunk.js"
+  },
+  {
+    "revision": "97910f765df216a8fed8305e4b894f4f",
+    "url": "/sukart/static/media/Cimg4.97910f76.jpg"
   },
   {
     "revision": "ea80f759b872d917610d03eb6039236f",
@@ -28,20 +36,12 @@ self.__precacheManifest = [
     "url": "/sukart/static/media/user-profile.c4aead1b.svg"
   },
   {
-    "revision": "98e91681fd2a8af3b99d738bc646efe2",
-    "url": "/sukart/static/media/Cimg1.98e91681.webp"
-  },
-  {
     "revision": "75a0b12d9e6353f4acccfbfbc3ac2878",
     "url": "/sukart/static/media/Cimg2.75a0b12d.jpg"
   },
   {
     "revision": "f1d7e63fe64d2ebf8a2995ff04c0b051",
     "url": "/sukart/static/media/Cimg3.f1d7e63f.jpg"
-  },
-  {
-    "revision": "97910f765df216a8fed8305e4b894f4f",
-    "url": "/sukart/static/media/Cimg4.97910f76.jpg"
   },
   {
     "revision": "21c7c5699063ca76277d32feb4db030a",
@@ -56,7 +56,11 @@ self.__precacheManifest = [
     "url": "/sukart/static/media/Cimg7.c4f56d5c.jpg"
   },
   {
-    "revision": "cea997d1ca76733932730bba48f116f9",
+    "revision": "98e91681fd2a8af3b99d738bc646efe2",
+    "url": "/sukart/static/media/Cimg1.98e91681.webp"
+  },
+  {
+    "revision": "476e95689bfa1b0566f3ec6720cb509c",
     "url": "/sukart/index.html"
   }
 ];
