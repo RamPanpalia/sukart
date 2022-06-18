@@ -7,6 +7,8 @@ import { collection, addDoc, arrayRemove, getDocs, query, where  } from "firebas
 export default function Card(props){
     const [count, setCount] = useState(1)
     const [isFav, setBool] = useState(false)
+    const [successMsg, setSuccessMsg] = useState('');
+    const [errorMsg, setErrorMsg] = useState('');
 
     function GetCurrentUser() {
         const [user, setUser] = useState("");
@@ -32,12 +34,32 @@ export default function Card(props){
       }
       const loggeduser = GetCurrentUser();
 
-    //we will send all the data onClick to firebase and later populate it on the buy history or add to cart page
-    //we will also add and remove products from favourites
     function buyIt(){}
-    const addToCart=()=>{
-        if(loggeduser){}
+
+    const addToCart = () => {
+        if (loggeduser) {
+            console.log(loggeduser[0].uid)
+            addDoc(collection(db, `cart-${loggeduser[0].uid}`), {
+                brand:"brand-name",
+                customersupport:"customersupport",
+                description:"Description",
+                price:"149",
+                productimage:props.img,
+                producttittle:props.name,
+                producttype:" ",
+                warranty:"No Warranty",
+                quantity: count
+            }).then(() => {
+                setSuccessMsg('Product added to cart');
+
+            }).catch((error) => { setErrorMsg(error.message) });
+        }
+        else {
+            setErrorMsg('You need to login first')
+        }
+
     }
+
     function toggleFav(){}
     
     function add() {

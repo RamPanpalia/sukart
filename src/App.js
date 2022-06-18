@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Navbar from './Navbar';
 // import SignUp from './SignUp';
+import Cart from './Cart'
 import Carousal from './Carousal'
 import Section0 from './Section0';
 import Section1 from './section1';
@@ -15,6 +16,7 @@ export default function App() {
     <>
     <div className="App">
       <Navbar/>
+      <Cart/>
       {/* <SignUp/> */}
       <Sell/>
       <Carousal/>

@@ -77,6 +77,10 @@
     display: none;
     margin: 0;
 }
+.Card:hover{
+    height: 525px;
+    transition: 0.5s;
+}
 .Card:hover .buy-opt{
     display: initial;
 }

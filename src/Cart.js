@@ -4,17 +4,43 @@ import {
     query,
     onSnapshot,
     getDocs,
+    where
 } from 'firebase/firestore'
-import { db } from './FirebaseConfigs/firebaseConfig'
+import { auth, db } from "./FirebaseConfigs/firebaseConfig";
 import './Section0.css'
 import Card2 from './Card2'
 
-const Section0 = () => {
+const Cart = () => {
+    function GetCurrentUser() {
+        const [user, setUser] = useState("");
+        const usersCollectionRef = collection(db, "users");
+        useEffect(() => {
+          auth.onAuthStateChanged(userlogged => {
+            if (userlogged) {
+              const getUsers = async () => {
+                const q = query(
+                  collection(db, "user"),
+                  where("uid", "==", userlogged.uid)
+                );
+                const data = await getDocs(q);
+                setUser(data.docs.map((doc) => ({...doc.data(), id:doc.id })));
+              };
+              getUsers();
+            } else {
+              setUser(null);
+            }
+          });
+        }, []);
+        return user
+      }
+        const loggeduser = GetCurrentUser();
+
     const [products, setProducts] = useState([]);
     useEffect(() => {
         const getProducts = () => {
             const productsArray = [];
-            const path = `product-BITS MERCHANDISE`;
+            const path = "cart-QsyrZzzAt2MVnc48nvVbHjhJ7x22";
+            /*.collection("cart-QsyrZzzAt2MVnc48nvVbHjhJ7x22")*/
             // alert(path);
             getDocs(collection(db, path)).then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
@@ -29,8 +55,8 @@ const Section0 = () => {
         getProducts();
     }, [])
     return (
-        <>
-            <div>BITS Merchandise</div>
+        <div className='MyCart'>
+            <h1>My Cart</h1>
             <div className='Section0 section'>
                 {products.map((product) => (
                     <Card2
@@ -39,8 +65,8 @@ const Section0 = () => {
                     />
                 ))}
             </div>
-        </>
+        </div>
     )
 }
 
-export default Section0
+export default Cart
