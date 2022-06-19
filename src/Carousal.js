@@ -1,5 +1,7 @@
 import React,{useRef} from 'react'
 import './Carousal.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { Carousel } from 'react-bootstrap'
 import img1 from './assets/Carousal/Cimg1.webp'
 import img2 from './assets/Carousal/Cimg2.jpg'
 import img3 from './assets/Carousal/Cimg3.jpg'
@@ -10,47 +12,93 @@ import img7 from './assets/Carousal/Cimg7.jpg'
 
 const Carousal = () => {
 
-    // const ref=useRef(null);
-    const scrollIt=(x,y,ele)=>{
-        // ref.current.scrollLeft+=x;
-        // document.querySelector(ele).scrollRight+=y;
-        // document.querySelector(ele).scrollLeft+=x;
-        // document.querySelector(ele).scrollRight+=y;
-    }
+  return (        
+  <Carousel>
+    <Carousel.Item>
+        <img
+            className="d-block w-100"
+            src={img4}
+            alt="First slide"
+        />
+        <Carousel.Caption>
+            <h3>Buy Gadgets</h3>
+            <p>Upto 60% off on all gadgets</p>
+        </Carousel.Caption>
+    </Carousel.Item>
+    <Carousel.Item>
+        <img
+            className="d-block w-100"
+            src={img2}
+            alt="Second slide"
+        />
 
-    const scroll_It=(scrollOffSet)=>{
-        // ref.current.scrollRight += scrollOffSet;
-        // document.querySelector(ele).scrollLeft+=x;
-        // document.querySelector(ele).scrollRight+=y;
-    }
+        <Carousel.Caption>
+            <h3>Buy Apple Products</h3>
+            <p>The Biggest Sale</p>
+        </Carousel.Caption>
+    </Carousel.Item>
+    <Carousel.Item>
+        <img
+            className="d-block w-100"
+            src={img3}
+            alt="Third slide"
+        />
 
-  return (
-    <div className='carousal-main'>
+        <Carousel.Caption>
+            <h3></h3>
+            <p></p>
+        </Carousel.Caption>
+    </Carousel.Item>
 
-    <div className='Carousal'>
+    <Carousel.Item>
+        <img
+            className="d-block w-100"
+            src={img4}
+            alt="Fourth slide"
+        />
 
-    <div className='Navigator'>
-        <div className='LeftArrow' onClick={()=>scroll_It(-1300)} >
-         <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48">
-             <path d="M20 44 0 24 20 4 22.8 6.85 5.65 24 22.8 41.15Z"/>
-         </svg>
-        </div>
-        <div className='RightArrow' onClick={()=>scroll_It(1300)}>
-         <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48">
-             <path d="M15.2 43.9 12.4 41.05 29.55 23.9 12.4 6.75 15.2 3.9 35.2 23.9Z"/>
-         </svg>
-        </div>
-    </div>
+        <Carousel.Caption>
+            <h3>Black Friday Sale</h3>
+            <p>All Gadgets 60% off</p>
+        </Carousel.Caption>
+    </Carousel.Item>
+    <Carousel.Item>
+        <img
+            className="d-block w-100"
+            src={img5}
+            alt="Fourth slide"
+        />
 
-        <img src={img1} alt=''/>
-        <img src={img2} alt=''/>
-        <img src={img3} alt=''/>
-        <img src={img4} alt=''/>
-        <img src={img5} alt=''/>
-        <img src={img6} alt=''/>
-        <img src={img7} alt=''/>
-    </div>
-    </div>
+        <Carousel.Caption>
+            <h3>Black Friday Sale</h3>
+            <p>All Gadgets 60% off</p>
+        </Carousel.Caption>
+    </Carousel.Item>
+    <Carousel.Item>
+        <img
+            className="d-block w-100"
+            src={img6}
+            alt="Fourth slide"
+        />
+
+        <Carousel.Caption>
+            <h3>Black Friday Sale</h3>
+            <p>All Gadgets 60% off</p>
+        </Carousel.Caption>
+    </Carousel.Item>
+    <Carousel.Item>
+        <img
+            className="d-block w-100"
+            src={img7}
+            alt="Fourth slide"
+        />
+
+        <Carousel.Caption>
+            <h3>Black Friday Sale</h3>
+            <p>All Gadgets 60% off</p>
+        </Carousel.Caption>
+    </Carousel.Item>
+</Carousel>
   )
 }
 

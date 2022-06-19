@@ -10,7 +10,7 @@ import { auth, db } from "./FirebaseConfigs/firebaseConfig";
 import './Section0.css'
 import Card2 from './Card2'
 
-const History = () => {
+const Wishlist = () => {
     function GetCurrentUser() {
         const [user, setUser] = useState("");
         const usersCollectionRef = collection(db, "users");
@@ -38,7 +38,7 @@ const History = () => {
     if(loggeduser){
         const getProducts = () => {
             const productsArray = [];
-            const path = `history-${loggeduser[0].uid}`;
+            const path = `favourites-${loggeduser[0].uid}`;
             getDocs(collection(db, path)).then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
                     productsArray.push({ ...doc.data(), id: doc.id })
@@ -51,8 +51,8 @@ const History = () => {
         getProducts();
     }
     return (
-        <div className='MyHistory'>
-            <h1>Purchase History</h1>
+        <div className='MyWishlist'>
+            <h1>Wishlist</h1>
             <div className='Section0 section'>
                 {products.map((product) => (
                     <Card2
@@ -65,4 +65,4 @@ const History = () => {
     )
 }
 
-export default History
+export default Wishlist

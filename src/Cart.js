@@ -4,11 +4,12 @@ import {
     query,
     onSnapshot,
     getDocs,
+    deleteDoc,
     where
 } from 'firebase/firestore'
 import { auth, db } from "./FirebaseConfigs/firebaseConfig";
 import './Section0.css'
-import Card2 from './Card2'
+import CartCard from './CartCard'
 
 const Cart = () => {
     function GetCurrentUser() {
@@ -35,37 +36,37 @@ const Cart = () => {
       }
         const loggeduser = GetCurrentUser();
 
-    const [products, setProducts] = useState([]);
-    useEffect(() => {
-        const getProducts = () => {
-            const productsArray = [];
-            const path = "cart-QsyrZzzAt2MVnc48nvVbHjhJ7x22";
-            /*.collection("cart-QsyrZzzAt2MVnc48nvVbHjhJ7x22")*/
-            // alert(path);
-            getDocs(collection(db, path)).then((querySnapshot) => {
+    const [cartdata, setcartdata] = useState([]);
+    if(loggeduser){
+        const getcartdata = () => {
+            const cartArray = [];
+            getDocs(collection(db, `cart-${loggeduser[0].uid}`)).then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
-                    productsArray.push({ ...doc.data(), id: doc.id })
-                    // console.log(doc.id, "=>", doc.data())
+                    cartArray.push({ ...doc.data(), id: doc.id })
                 })
-                setProducts(productsArray)
+                setcartdata(cartArray)
             }).catch((error) => {
                 console.log(error.message);
             })
         }
-        getProducts();
-    }, [])
+        getcartdata();
+    }
     return (
+        <>
         <div className='MyCart'>
-            <h1>My Cart</h1>
+        <h1>My Cart</h1>
+        {cartdata!==0?
             <div className='Section0 section'>
-                {products.map((product) => (
-                    <Card2
-                        key={product.id}
-                        product={product}
+                {cartdata.map((product) => (
+                    <CartCard
+                    key={product.id}
+                    product={product}
                     />
                 ))}
             </div>
+        :<>YourCart is empty</>}
         </div>
+        </>
     )
 }
 

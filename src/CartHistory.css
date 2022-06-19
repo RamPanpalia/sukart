@@ -7,6 +7,19 @@
 .cartt,
 .historyy{
     border: 3px solid rgb(160, 160, 160);
-    overflow-X: scroll;
+    overflow: scroll;
+    height: 700px;
     width: 50%;
+}
+
+@media screen and (max-width:1200px) {
+
+.CartHistory{
+    flex-direction: column;
+}
+.cartt,
+.historyy{
+    width: 100%;
+}
+
 }
