@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Card2.css'
 import { useParams } from 'react-router-dom'
 import { auth, db } from './FirebaseConfigs/firebaseConfig'
-import { doc, getDoc, collection, query, where, getDocs, addDoc } from "firebase/firestore";
+import { doc, getDoc, collection, query, where, getDocs, updateDoc, deleteDoc, addDoc } from "firebase/firestore";
 
 export default function Card2(props) {
     const [count, setCount] = useState(1)
@@ -52,6 +52,13 @@ export default function Card2(props) {
     }
 
     // GetCurrentProduct();
+    
+    const updateBalance=async()=>{
+        const itemref = doc(db, `user-${loggeduser[0].uid}`)
+        await updateDoc(itemref, {
+            balance: loggeduser[0].balance -props.product.price
+        }).then(() => { alert(`Your balance after this purchase is ${loggeduser[0].balance}`) })
+    }
 
     const buyIt=()=>{
         if (loggeduser) {
@@ -67,6 +74,7 @@ export default function Card2(props) {
                 warranty:props.product.warranty,
                 quantity: count
             }).then(() => {
+                updateBalance();
                 setSuccessMsg('Product added to cart');
                 alert('Product purchase request sent will be dilivered within 7 days to your default home address');
 
@@ -126,7 +134,10 @@ export default function Card2(props) {
             alert('You need to login first')
         }
     }
-    function removeFromFav() { }
+    const removeFromFav=async ()=>{
+        await deleteDoc(doc(db,`favourites-${loggeduser[0].uid}`,`${props.product.id}`))
+        .then(() => { console.log('Remove from favourites') })
+    }
 
     function add() {
         setCount(function (oldValue) {
